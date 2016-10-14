@@ -1,0 +1,21 @@
+users  存放用户
+questions  存放问答
+//表单内容形成字符串,用&连接
+console.log($(this).serialize())
+//形成数组
+console.log($(this).serializeArray())
+//响应json数据， ajax可接收发过来的json数据(send发送字符串)
+res.status(200).json({"code":"error","content":"密码输入不一致"})
+var data = new FormData(this)
+$.ajax({
+	url:'/user/photo',
+	data:data,
+	contentType:false,
+	processData:false,
+	type:'POST',
+	success:function(){
+
+	}
+})
+//指定默认图片(若src地址不存在即采用onerror所设的默认地址)
+img src="/images/photo_default.jpg" alt="" class="user-photo fl" width="64" height="64" onerror="this.src='/images/photo_default.jpg'"
